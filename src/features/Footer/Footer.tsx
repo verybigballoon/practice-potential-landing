@@ -16,10 +16,10 @@ const Footer: React.FC = () => {
           <span className="mr-8">
             © {`${new Date().getFullYear()}`} Practice and Potential
           </span>
-          <Link href="" color={"yellow"} className="font-light mr-8">
+          <Link href="" color="yellow" className="font-light mr-8">
             Terms of Use
           </Link>
-          <Link href="" color={"yellow"} className="font-light">
+          <Link href="" color="yellow" className="font-light">
             Privacy Policy
           </Link>
         </div>
