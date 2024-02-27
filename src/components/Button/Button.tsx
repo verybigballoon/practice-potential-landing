@@ -1,35 +1,32 @@
 import React, { ButtonHTMLAttributes } from "react";
 
-enum ButtonColor {
-  primaryYellow = "yellow",
-  primaryGreen = "green",
-}
-
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  color?: ButtonColor;
+  color?: "green" | "yellow";
+  className?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
   children,
-  color = ButtonColor.primaryYellow,
+  className,
+  color = "green",
   ...buttonProps
 }) => {
   const colorVariants = {
-    green: "bg-primary-forest-green text-primary-white",
-    yellow: "bg-primary-yellow text-primary-forest-green",
+    green: "bg-primary-forest-green text-primary-white hover:bg-secondary-teal",
+    yellow:
+      "bg-primary-yellow text-primary-forest-green hover:bg-secondary-yellow",
   };
 
   return (
     <div className="flex justify-center">
       <button
         {...buttonProps}
-        className={`font-medium ${colorVariants[color]}
-        } flex items-center rounded-md py-3 px-6`}
+        className={`${colorVariants[color]}
+        } flex items-center rounded-xl py-3 px-6 ${className}`}
       >
         {children}
       </button>
     </div>
   );
 };
-
 export default Button;

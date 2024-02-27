@@ -7,6 +7,7 @@ export default {
       "primary-yellow": "#fcdeac",
       "primary-white": "#ffffff",
       "secondary-matcha": "#5fb37f",
+      "secondary-yellow": "#fed084",
       "secondary-prugly-yellow": "#d9d444",
       "secondary-froggy-lime": "#99bc00",
       "secondary-teal": "#00968b",
