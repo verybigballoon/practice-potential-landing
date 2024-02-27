@@ -22,7 +22,7 @@ const Button: React.FC<ButtonProps> = ({
       <button
         {...buttonProps}
         className={`${colorVariants[color]}
-        } flex items-center rounded-xl py-3 px-6 ${className}`}
+        } inline text-center min-w-32 rounded-xl py-3 px-6  ${className}`}
       >
         {children}
       </button>
