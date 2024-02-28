@@ -18,7 +18,7 @@ const LandingPageSection: React.FC<LandingPageSectionProps> = ({
 
   return (
     <div
-      className={`flex flex-col items-center justify-center h-screen ${colorVariants[backgroundColor]} ${className}`}
+      className={`flex flex-col items-center justify-center min-h-screen ${colorVariants[backgroundColor]} ${className}`}
     >
       {children}
     </div>

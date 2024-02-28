@@ -6,12 +6,13 @@ import LandingPageSection from "../../features/LandingPageSection/LandingPageSec
 const LandingPage: React.FC = () => {
   return (
     <>
-      <Header />
+      <Header className="px-4 sm:px-16 lg:px-40" />
       <LandingPageSection backgroundColor="green">
         <h1>Practice and Potential</h1>
       </LandingPageSection>
-      <div className="min-h-3 bg-secondary-matcha"></div>
-      <Footer />
+      <div className="min-h-3 bg-secondary-matcha" />
+      <Footer className="px-4 sm:px-16 lg:px-40" />
+      <div />
     </>
   );
 };

@@ -1,10 +1,14 @@
 import React from "react";
 import Link from "../../components/Link/Link";
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  className?: string;
+}
+
+const Footer: React.FC<FooterProps> = ({ className }) => {
   return (
     <footer className="bg-primary-forest-green py-8">
-      <div className="container mx-auto px-6">
+      <div className={`mx-auto ${className}`}>
         <div className="flex flex-col font-semibold text-primary-white max-w-md text-left mb-10">
           <p className="mb-3">
             "Learning is the process whereby knowledge is created through the

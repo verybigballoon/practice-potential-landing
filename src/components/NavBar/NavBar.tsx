@@ -1,12 +1,13 @@
 import React, { ReactNode, useState } from "react";
-import { IoClose, IoMenu } from "react-icons/io5";
+import { PiPlusCircle } from "react-icons/pi";
 
 interface NavbarProps {
   logo: ReactNode;
   children: ReactNode;
+  className?: string;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ children, logo }) => {
+const Navbar: React.FC<NavbarProps> = ({ children, logo, className }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -15,11 +16,11 @@ const Navbar: React.FC<NavbarProps> = ({ children, logo }) => {
 
   return (
     <nav className="bg-primary-white">
-      <div className="w-full mx-auto py-4 px-4 sm:px-16 lg:px-40">
+      <div className={`w-full mx-auto py-4 ${className}`}>
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">{logo}</div>
           <div className="hidden md:block">
-            <ul className="ml-10 flex items-baseline space-x-8">{children}</ul>
+            <ul className="ml-10 flex items-baseline space-x-10">{children}</ul>
           </div>
 
           <div className="mr-2 flex md:hidden">
@@ -32,21 +33,27 @@ const Navbar: React.FC<NavbarProps> = ({ children, logo }) => {
             >
               <span className="sr-only">Open main menu</span>
               <div>
-                {isOpen ? (
-                  <IoClose size={40} color="primary-forest-green" />
-                ) : (
-                  <IoMenu size={40} color="primary-forest-green" />
-                )}
+                <PiPlusCircle
+                  className={`${
+                    isOpen && "rotate-45"
+                  } transition-transform ease-in duration-150`}
+                  size={50}
+                  color="primary-forest-green"
+                />
               </div>
             </button>
           </div>
         </div>
       </div>
       <div
-        className={`${isOpen ? "block" : "hidden"} md:hidden`}
+        className={`${
+          isOpen ? "top-24 opacity-100" : "-top-full opacity-0"
+        } md:hidden transition-all ease-in duration-150 fixed w-full -z-10 bg-primary-white px-0`}
         id="mobile-menu"
       >
-        <div className="*:justify-center px-2 pt-2 pb-3 space-y-1 sm:px-3 *:px-3 *:py-2">
+        <div
+          className={`*:justify-center pt-2 pb-3 space-y-1 sm:px-3 *:px-3 *:py-2 ${className}`}
+        >
           {children}
         </div>
       </div>
